@@ -22,7 +22,7 @@ An extremely basic TCP echo server. Run:
 
 `node rawServer.js`
 
-Now the server is running use Telnet or NetCat to connect:
+Now that the server is running use Telnet or NetCat to connect:
 
 Windows:
 ```telnet localhost 9000```
@@ -30,7 +30,7 @@ Windows:
 Linux/Unix: 
 ```nc localhost 9000```
 
-Now type in whatever string you want. In the terminal window running the server you should see log statements that log when you connect, and the raw buffer data (printing out each byte). If you are curious what it does, just open the file, I've commented enough to highlight how it works. 
+Once connected, type whatever you want. In the terminal window which you started running the server you should see log statements that log when you connect, and the raw buffer data (printing out each byte). If you are curious what it does, just open the file, I've commented enough to highlight how it works. 
 
 <a name="2"></a>
 ## #2: A Flawed Basic Service
@@ -38,7 +38,7 @@ A service which returns the provided string in all caps. This service was built 
 
 ```node capitalizingServer.js```
 
-Now the server is running use Telnet or NetCat to connect:
+Now that the server is running use Telnet or NetCat to connect:
 
 Windows:
 ```telnet localhost 9000```
@@ -46,8 +46,20 @@ Windows:
 Linux/Unix: 
 ```nc localhost 9000```
 
-Now type in whatever string you want, and you will get back that string in all caps.
+Once connected, type whatever you want, and it will be returned in all caps.
 
 <a name="3"></a>
 ## #3: A Basic Service as a Stream
-This is an implementation of the same capitalization service as #2, however, it's implemented as a stream in order to solve the flaw outlined in example #2.
+This is an implementation of the same capitalization service as #2, however, it's implemented as a stream in order to solve the flaw outlined in example #2. So, rather than listening for TCP 'data' events we start a stream, then pipe the connection into the stream, and finally, pipe the stream back into the service. Run via:
+
+```node capitalizingServer.js```
+
+Now that the server is running use Telnet or NetCat to connect:
+
+Windows:
+```telnet localhost 9000```
+
+Linux/Unix: 
+```nc localhost 9000```
+
+Once connected, type whatever you want, and it will be returned in all caps.
