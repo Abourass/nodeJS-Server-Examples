@@ -1,0 +1,86 @@
+{
+  "name": "server_examples",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "rawServer": "node rawServer.js",
+    "capitalizingServer": "node capitalizingServer.js",
+    "capitalizingServer2": "node capitalizingServer2.js",
+    "gatewayServer": "node gatewayServer.js"
+  },
+  "author": "Antonio Bourassa",
+  "license": "ISC",
+  "repository": "https://github.com/Abourass/nodeJS-Server-Examples.git",
+  "eslintConfig": {
+    "plugins": [
+      "security"
+    ],
+    "extends": [
+      "airbnb-base",
+      "plugin:node/recommended",
+      "plugin:security/recommended"
+    ],
+    "env": {
+      "shared-node-browser": true,
+      "node": true,
+      "es6": true,
+      "mongo": true,
+      "jquery": true,
+      "jest": true
+    },
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "yoda": 0,
+      "no-unused-vars": 0,
+      "one-var": 0,
+      "one-var-declaration-per-line": 0,
+      "consistent-return": 0,
+      "linebreak-style": 0,
+      "eqeqeq": 0,
+      "func-names": 0,
+      "import/newline-after-import": 0,
+      "max-len": 0,
+      "no-console": 0,
+      "no-lonely-if": 0,
+      "no-new-object": [
+        "error"
+      ],
+      "object-curly-newline": [
+        "error",
+        {
+          "ObjectPattern": {
+            "multiline": true
+          }
+        }
+      ],
+      "no-param-reassign": 0,
+      "no-plusplus": 0,
+      "no-restricted-properties": 0,
+      "no-shadow": 0,
+      "no-underscore-dangle": 0,
+      "no-void": 0,
+      "object-curly-spacing": 0,
+      "object-shorthand": [
+        "error",
+        "consistent"
+      ],
+      "prefer-destructuring": 0,
+      "space-before-blocks": 0,
+      "space-before-function-paren": 0
+    }
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-security": "^1.4.0",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "json-duplex-stream": "^1.2.0"
+  }
+}
