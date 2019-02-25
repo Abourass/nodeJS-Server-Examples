@@ -1,4 +1,4 @@
-// ------------------------------------
+// ---------------------------------------------------------------------------
 // Server Example: Capitalizing Service
 // Flaws: This example does not provide back-flow, so if the rate at which the
 // client sends characters is lower than the rate it receives (for example, if
@@ -7,7 +7,7 @@
 // by which the incoming TCP stream is paused if the level of memory pending
 // on the outgoing buffer gets high enough.
 // Solution: See Capitalizing Service 2 - capitalizingServer2.js
-// ------------------------------------
+// ---------------------------------------------------------------------------
 const net = require('net');
 
 const server = net.createServer();
