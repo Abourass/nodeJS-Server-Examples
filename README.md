@@ -1,5 +1,5 @@
 # Node Server Examples
-These are simple networking examples for NodeJS
+These are some simple networking examples for NodeJS that I learned while reading *Networking Patterns* by *Pedro Teixeira*
 
 ### Table of Contents
 Example | Description
