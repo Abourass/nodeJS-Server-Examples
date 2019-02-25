@@ -17,7 +17,7 @@ server.listen(9000, function() { // ----------------------------> Have the serve
   console.log('server listening to %j', server.address()); // --> Log the server address where it's listening
 });
 
-function handleConnection(conn) { // ---------------------------> Here we create a function that logs when a new TCP connection is established
+function handleConnection(conn) { // ---------------------------> Here we create a function that does our logging
   const remoteAddress = conn.remoteAddress + ':' + conn.remotePort;
   console.log('new client connection from %s', remoteAddress);
 
