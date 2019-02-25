@@ -38,3 +38,6 @@ Linux/Unix:
 ```nc localhost 9000```
 
 Now type in whatever string you want, and you will get back that string in all caps.
+
+## #3: A Basic Service as a Stream
+This is an implementation of the same capitalization service as #2, however, it's implemented as a stream in order to solve the flaw outlined in example #2.
