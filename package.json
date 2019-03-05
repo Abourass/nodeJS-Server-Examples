@@ -11,6 +11,17 @@
   "author": "Antonio Bourassa",
   "license": "ISC",
   "repository": "https://github.com/Abourass/nodeJS-Server-Examples.git",
+  "dependencies": {
+    "json-duplex-stream": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-security": "^1.4.0",
+    "nodemon": "^1.18.10"
+  },
   "eslintConfig": {
     "plugins": [
       "security"
@@ -71,16 +82,5 @@
       "space-before-blocks": 0,
       "space-before-function-paren": 0
     }
-  },
-  "devDependencies": {
-    "eslint": "^5.14.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-security": "^1.4.0",
-    "nodemon": "^1.18.10"
-  },
-  "dependencies": {
-    "json-duplex-stream": "^1.2.0"
   }
 }
