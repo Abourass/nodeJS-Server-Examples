@@ -2,16 +2,13 @@ const extend = require('util')._extend;
 const inherits = require('util').inherits;
 const Transform = require('stream').Transform;
 
-module.exports = Gateway;
-inherits(Gateway, Transform);
-
 const defaultOptions = {
   highWaterMark: 10,
-  objectMode: true
+  objectMode: true,
 };
 
 function Gateway(options) {
-  if (! (this instanceof Gateway)) {
+  if (!(this instanceof Gateway)) {
     return new Gateway(options);
   }
   options = extend({}, options || {});
@@ -19,11 +16,18 @@ function Gateway(options) {
   Transform.call(this, options);
 }
 
+module.exports = Gateway;
+inherits(Gateway, Transform);
+
+// Fake Push to queue
+function pushToQueue(object, callback) {
+  setTimeout(callback, Math.floor(Math.random() * 1000));
+}
+
 // _transform
 Gateway.prototype._transform = _transform;
 function _transform(event, encoding, callback) {
-  if (!event.id)
-    return handleError(new Error('event doesn\'t have an \'id\' field'));
+  if (!event.id) return handleError(new Error('event doesn\'t have an \'id\' field'));
   pushToQueue(event, pushed);
   function pushed(err) {
     if (err) {
@@ -31,7 +35,7 @@ function _transform(event, encoding, callback) {
     } else {
       reply = {
         id: event.id,
-        success: true
+        success: true,
       };
       callback(null, reply);
     }
@@ -40,13 +44,8 @@ function _transform(event, encoding, callback) {
     const reply = {
       id: event.id,
       success: false,
-      error: err.message
+      error: err.message,
     };
     callback(null, reply);
   }
-}
-
-// Fake Push to queue
-function pushToQueue(object, callback) {
-  setTimeout(callback, Math.floor(Math.random() * 1000));
 }
