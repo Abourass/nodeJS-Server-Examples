@@ -14,6 +14,7 @@
   "dependencies": {
     "duplex-emitter": "2.1.2",
     "json-duplex-stream": "^1.2.0",
+    "mux-demux": "3.7.9",
     "reconnect-net": "1.1.1"
   },
   "devDependencies": {
